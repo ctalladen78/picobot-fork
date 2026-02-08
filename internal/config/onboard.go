@@ -168,9 +168,14 @@ This document describes the tools available to picobot.
 
 ### filesystem
 Read, write, and list files in the workspace.
-- action: "read_file", "write_file", "list_files"
-- path: file or directory path
-- content: (for write_file) the content to write
+- action: "read", "write", "list"
+- path: file or directory path (relative to workspace)
+- content: (for "write" action) the content to write
+
+Examples:
+- Read: {"action": "read", "path": "data.csv"}
+- Write: {"action": "write", "path": "data.csv", "content": "Name\nBen\nKen\n"}
+- List: {"action": "list", "path": "."}
 
 ## Shell Execution
 
