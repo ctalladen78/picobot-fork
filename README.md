@@ -82,9 +82,13 @@ go build -o picobot ./cmd/picobot
 
 ## Architecture
 
+Actually the logic is simple and straightforward. Messages flow through a **Chat Hub** (inbound/outbound channels) into the **Agent Loop**, which builds context from memory/sessions/skills, calls the LLM (OpenRouter or Ollama), and executes tools (filesystem, exec, web, etc.) before sending replies back through the hub.
+
 <p>
   <img src="how-it-works.png" alt="How Picobot Works" width="600">
 </p>
+
+Notes: Channel refers to communication channels (e.g., Telegram, WhatsApp, etc.).
 
 ## Features
 
