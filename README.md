@@ -3,10 +3,10 @@
   <h1 align="center">Picobot</h1>
   <p align="center"><strong>The AI agent that runs anywhere — even on a $5 VPS.</strong></p>
   <p align="center">
-    <img src="https://img.shields.io/badge/binary-~11MB-brightgreen" alt="Binary Size">
-    <img src="https://img.shields.io/badge/docker-~33MB-blue" alt="Docker Size">
+    <img src="https://img.shields.io/badge/binary-~8MB-brightgreen" alt="Binary Size">
+    <img src="https://img.shields.io/badge/docker-~28MB-blue" alt="Docker Size">
     <img src="https://img.shields.io/badge/built_with-Go-00ADD8?logo=go" alt="Go">
-    <img src="https://img.shields.io/badge/RAM-~20MB-orange" alt="Memory Usage">
+    <img src="https://img.shields.io/badge/RAM-~10MB-orange" alt="Memory Usage">
     <img src="https://img.shields.io/badge/license-MIT-yellow" alt="License">
     <img src="https://github.com/louisho5/picobot/actions/workflows/docker-publish.yml/badge.svg" alt="Workflow">
   </p>
@@ -14,7 +14,7 @@
 
 ---
 
-Love the idea of open-source AI agents like [OpenClaw](https://github.com/openclaw/openclaw) but tired of the bloat? **Picobot** gives you the same power — persistent memory, tool calling, skills, Telegram integration — in a single ~12MB binary that boots in milliseconds.
+Love the idea of open-source AI agents like [OpenClaw](https://github.com/openclaw/openclaw) but tired of the bloat? **Picobot** gives you the same power — persistent memory, tool calling, skills, Telegram integration — in a single ~8MB binary that boots in milliseconds.
 
 No Python. No Node. No 500MB container. Just one Go binary and a config file.
 
@@ -22,12 +22,11 @@ No Python. No Node. No 500MB container. Just one Go binary and a config file.
 
 | | Picobot | Typical Agent Frameworks |
 |---|---|---|
-| **Binary size** | ~12MB | 200MB+ (Python + deps) |
-| **Docker image** | ~33MB (Alpine) | 500MB–1GB+ |
+| **Binary size** | ~8MB | 200MB+ (Python + deps) |
+| **Docker image** | ~28MB (Alpine) | 500MB–1GB+ |
 | **Cold start** | Instant | 5–30 seconds |
-| **RAM usage** | ~20MB idle | 200MB–1GB |
+| **RAM usage** | ~10MB idle | 200MB–1GB |
 | **Dependencies** | Zero (single binary) | Python, pip, venv, Node… |
-| **Minimum hardware** | 1 CPU / 256MB RAM | 2+ CPU / 1GB+ RAM |
 
 Picobot runs happily on a **$5/mo VPS**, a Raspberry Pi, or even an old Android phone via Termux.
 
