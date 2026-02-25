@@ -10,10 +10,59 @@
 
 ## Step 1: Build
 
+Picobot is a single static binary with no runtime dependencies.
+
+### Choose your variant
+
+Picobot ships in two variants:
+
+| Variant | Build command | Binary size | WhatsApp |
+|---------|--------------|-------------|----------|
+| **Full** (default) | `go build ./cmd/picobot` | ~31 MB | ✅ included |
+| **Lite** | `go build -tags lite ./cmd/picobot` | ~13 MB | ❌ excluded |
+
+The **lite** build is designed for resource-constrained environments (IoT, cheap VPS, minimal servers) where every megabyte matters. It includes all core features — agent, Telegram, Discord, memory, skills, cron — but strips out large optional packages like WhatsApp. If you don't need WhatsApp (or other heavy integrations added in the future), lite is the right choice.
+
+The **full** build is the default. If you're unsure, start here.
+
+### Build from source
+
 ```sh
 git clone <repo-url>
-cd picobot-main
+cd picobot
+
+# Full build (includes WhatsApp)
 go build -o picobot ./cmd/picobot
+
+# Lite build (smaller, no WhatsApp)
+go build -tags lite -o picobot ./cmd/picobot
+```
+
+### Build all platforms at once (Makefile)
+
+Use `make` to cross-compile every platform in one shot:
+
+```sh
+make build
+```
+
+This produces six binaries:
+
+| File | Platform | Variant |
+|------|----------|---------|
+| `picobot_linux_amd64` | Linux x86-64 | Full |
+| `picobot_linux_arm64` | Linux ARM64 | Full |
+| `picobot_mac_arm64` | macOS Apple Silicon | Full |
+| `picobot_linux_amd64_lite` | Linux x86-64 | Lite |
+| `picobot_linux_arm64_lite` | Linux ARM64 | Lite |
+| `picobot_mac_arm64_lite` | macOS Apple Silicon | Lite |
+
+You can also build individual targets:
+
+```sh
+make linux_amd64        # full, Linux x86-64
+make linux_arm64_lite   # lite, Linux ARM64
+make clean              # remove all built binaries
 ```
 
 ## Step 2: Onboard

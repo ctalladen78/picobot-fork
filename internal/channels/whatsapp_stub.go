@@ -21,5 +21,5 @@ func StartWhatsApp(ctx context.Context, hub *chat.Hub, dbPath string, allowFrom 
 // SetupWhatsApp returns an error explaining how to build with WhatsApp support.
 func SetupWhatsApp(dbPath string) error {
 	return fmt.Errorf("WhatsApp support is not compiled into this binary\n" +
-		"Download the full version of picobot from the github releases page" +)
+		"Download the full version of picobot from the github releases page")
 }
